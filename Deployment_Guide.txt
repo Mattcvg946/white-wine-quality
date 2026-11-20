@@ -1,0 +1,66 @@
+WHITE WINE QUALITY
+Machine Learning Assignment Two
+Student ID 13890485 · 阮嘉興
+
+Files
+  app.py                Streamlit source with the student ID and name on lines 1 and 2
+  requirements.txt      Pinned Python dependencies
+  winequality-white.csv Course dataset used by the application
+
+Run locally
+1. Install Python 3.12 and open a terminal in the folder with the three files.
+2. Create a virtual environment and install dependencies.
+
+       python -m venv .venv
+
+   Windows PowerShell:
+
+       .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+       .\.venv\Scripts\python.exe -m streamlit run app.py
+
+   macOS or Linux:
+
+       .venv/bin/python -m pip install -r requirements.txt
+       .venv/bin/python -m streamlit run app.py
+
+3. Open the local URL printed in the terminal. Wait for the first session to
+   finish training. The model fits are cached while the app process is running.
+4. Click Predict quality with the initial values, then switch classifiers and
+   predict again. Check Model evaluation for the comparison, confusion matrix
+   and per-class metrics. Check Dataset for the partition counts and protocol.
+
+Deploy on Streamlit Community Cloud from GitHub
+1. In a GitHub account you control, create a repository for the assignment.
+   Choose private visibility if you want to restrict access to the source and
+   student information. Keep the three runtime files at the repository root.
+2. Commit the files to the main branch. Confirm that the CSV filename matches
+   exactly, including its lowercase letters. GitHub's browser upload works
+   for these files.
+3. Sign in at https://share.streamlit.io/ and connect the GitHub account.
+   Grant Streamlit access to the repository if GitHub asks.
+4. Select Create app, then Yup, I have an app. Enter the repository owner and
+   name, the branch (main if unchanged), and app.py as the main file path.
+5. Under Advanced settings choose Python 3.12 and save. The app needs no
+   secrets or external APIs. Select Deploy and watch the build log.
+6. Open the assigned streamlit.app URL, wait for training, and repeat the local
+   smoke checks. If startup fails, use Manage app to inspect the logs. For
+   dataset errors verify the CSV is committed beside app.py. For dependency
+   errors verify the Python version and that requirements.txt is at the root.
+7. Set viewing permissions so the grader can open the app. If access is
+   restricted, invite the grader using the app's sharing controls and verify
+   access. Include the exact app URL with the Moodle submission after launch.
+
+Submission
+Upload app.py and requirements.txt to the course Moodle assignment. Include
+the course CSV if attachments are permitted so the grader can run the app
+from one directory. For the deployment bonus, include this guide and the
+verified hosted URL. A deployment guide alone does not demonstrate hosting.
+
+Official deployment reference
+https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy
+
+Dataset reference
+P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis (2009).
+Modeling wine preferences by data mining from physicochemical properties.
+Decision Support Systems 47(4), 547-553.
+https://doi.org/10.1016/j.dss.2009.05.016
